@@ -13,6 +13,7 @@ import Signout from './components/auth/signout';
 import Home from './components/home';
 import About from './components/about';
 import ProjectList from './components/projects/project_list';
+import ProjectView from './components/projects/project_view';
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
 
@@ -32,6 +33,7 @@ ReactDOM.render(
         <IndexRoute component={Home} />
         <Route path="about" component={About} />
         <Route path="projects" component={ProjectList} />
+        <Route path="projects/:slug" component={ProjectView} />
         <Route path="signin" component={Signin} />
         <Route path="signup" component={Signup} />
         <Route path="signout" component={Signout} />
