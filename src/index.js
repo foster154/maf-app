@@ -14,6 +14,8 @@ import Home from './components/home';
 import About from './components/about';
 import ProjectList from './components/projects/project_list';
 import ProjectView from './components/projects/project_view';
+import PostList from './components/posts/post_list';
+import PostView from './components/posts/post_view';
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
 
@@ -34,6 +36,8 @@ ReactDOM.render(
         <Route path="about" component={About} />
         <Route path="projects" component={ProjectList} />
         <Route path="projects/:slug" component={ProjectView} />
+        <Route path="posts" component={PostList} />
+        <Route path="posts/:slug" component={PostView} />
         <Route path="signin" component={Signin} />
         <Route path="signup" component={Signup} />
         <Route path="signout" component={Signout} />
