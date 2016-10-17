@@ -1,47 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
-import RequireAuth from './components/auth/require_auth';
-import Signup from './components/auth/signup';
-import Signin from './components/auth/signin';
-import Signout from './components/auth/signout';
 import Home from './components/home';
 import About from './components/about';
 import ProjectList from './components/projects/project_list';
-import ProjectView from './components/projects/project_view';
+//import ProjectView from './components/projects/project_view';
 import PostList from './components/posts/post_list';
 import PostView from './components/posts/post_view';
-import reducers from './reducers';
-import { AUTH_USER } from './actions/types';
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
-const store = createStoreWithMiddleware(reducers);
-
-const token = localStorage.getItem('token');
-// If a token exists, consider the user to be signed in.
-if (token) {
-  store.dispatch({ type: AUTH_USER });
-}
+// projects
+import ShowAndTour from './components/projects/_show_and_tour';
+import SupportTracker from './components/projects/_support_tracker';
+import Panoractives from './components/projects/_panoractives';
+import MyRentWillBuy from './components/projects/_my_rent_will_buy';
+import BoiseStateYL from './components/projects/_boise_state_young_life';
+import BrooksideDentistry from './components/projects/_brookside_dentistry';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
         <Route path="about" component={About} />
         <Route path="projects" component={ProjectList} />
-        <Route path="projects/:slug" component={ProjectView} />
+        <Route path="projects/show-and-tour" component={ShowAndTour} />
+        <Route path="projects/support-tracker" component={SupportTracker} />
+        <Route path="projects/panoractives" component={Panoractives} />
+        <Route path="projects/rent-buy" component={MyRentWillBuy} />
+        <Route path="projects/bsu-young-life" component={BoiseStateYL} />
+        <Route path="projects/brookside-dentistry" component={BrooksideDentistry} />
         <Route path="posts" component={PostList} />
         <Route path="posts/:slug" component={PostView} />
-        <Route path="signin" component={Signin} />
-        <Route path="signup" component={Signup} />
-        <Route path="signout" component={Signout} />
       </Route>
     </Router>
-  </Provider>
   , document.querySelector('.container'));

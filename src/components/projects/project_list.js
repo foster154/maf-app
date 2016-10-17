@@ -7,31 +7,50 @@ import { API_URL } from '../../../constants.js';
 
 class ProjectList extends Component {
   
-  constructor(props) {
-    super(props);
-    
-    this.state = { projects: [] }
-    this.getProjects = this.getProjects.bind(this);
-  }
-  
-  componentWillMount() {
-    this.getProjects();
-  }
-  
-  getProjects() {
-    axios.get(`${API_URL}/projects`)
-    .then(response => {
-      this.setState({ projects: response.data });
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-  
   renderProjects() {
-    return this.state.projects.map(function(project) {
+    
+    const projects = [
+      {
+        "title" : "Show and Tour",
+        "slug" : "show-and-tour",
+        "coverImage" : "showandtour.jpg",
+        "summary" : "A virtual tour creation web app geared toward real estate photographers.",
+      },
+      {
+        "title" : "Support Tracker",
+        "slug" : "support-tracker",
+        "coverImage" : "supporttracker.jpg",
+        "summary" : "A support ticket and case management web app, including followups and metrics.",
+      },
+      {
+        "title" : "Panoractives",
+        "slug" : "panoractives",
+        "coverImage" : "panoractives.jpg",
+        "summary" : "A real estate photography and virtual tour provider.",
+      },
+      {
+        "title" : "My Rent Will Buy",
+        "slug" : "rent-buy",
+        "coverImage" : "rentbuy.jpg",
+        "summary" : "An online lead generation tool for real estate agents.",
+      },
+      {
+        "title" : "Boise State Young Life",
+        "slug" : "bsu-young-life",
+        "coverImage" : "bsuyounglife.jpg",
+        "summary" : "A website for a thriving college ministry.",
+      },
+      {
+        "title" : "Brookside Dentistry",
+        "slug" : "brookside-dentistry",
+        "coverImage" : "brookside.jpg",
+        "summary" : "A website for an award-winning dental office.",
+      },
+    ];
+    
+    return projects.map(function(project, index) {
       return (
-        <li key={project._id}>
+        <li key={index}>
           <h2 style={s.projectTitle}>{project.title}</h2>
           <Link to={`/projects/${project.slug}`}>
             <div style={s.projectWrapper}>
