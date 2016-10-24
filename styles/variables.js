@@ -5,6 +5,7 @@ const styleVars = {
     gray: '#A9A9A9',
     red: '#FF3B3F',
     ltGray: '#EFEFEF',
+    dkGray: '#757575',
   }
   
 }

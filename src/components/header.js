@@ -14,6 +14,7 @@ class Header extends Component {
           <Link style={s.navItem} to="/">Home</Link>
           <Link style={s.navItem} to="/about">About</Link>
           <Link style={s.navItem} to="/projects">Projects</Link>
+          <Link style={s.navItem} to="/learning">Learning</Link>
           <Link style={s.navItem} to="/posts">Posts</Link>
         </nav>
       </header>

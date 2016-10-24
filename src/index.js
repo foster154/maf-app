@@ -7,6 +7,7 @@ import Home from './components/home';
 import About from './components/about';
 import ProjectList from './components/projects/project_list';
 //import ProjectView from './components/projects/project_view';
+import Learning from './components/learning';
 import PostList from './components/posts/post_list';
 import PostView from './components/posts/post_view';
 
@@ -30,6 +31,7 @@ ReactDOM.render(
         <Route path="projects/rent-buy" component={MyRentWillBuy} />
         <Route path="projects/bsu-young-life" component={BoiseStateYL} />
         <Route path="projects/brookside-dentistry" component={BrooksideDentistry} />
+        <Route path="learning" component={Learning} />
         <Route path="posts" component={PostList} />
         <Route path="posts/:slug" component={PostView} />
       </Route>
