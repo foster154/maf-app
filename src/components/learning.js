@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import axios from 'axios';
 import { API_URL } from '../../constants.js';
-import dateFormat from 'dateFormat';
+import dateFormat from 'dateformat';
 import styleVars from '../../styles/variables';
 import styled from 'styled-components';
 
