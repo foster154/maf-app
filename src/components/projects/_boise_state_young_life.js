@@ -3,7 +3,7 @@ import Radium from 'radium';
 import Screenshots from '../helpers/screenshots';
 import ProjectLinks from '../helpers/project_links';
 
-export default class BoiseStateYL extends Component {
+class BoiseStateYL extends Component {
   
   render() {
     return (

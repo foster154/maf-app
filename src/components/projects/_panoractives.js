@@ -3,7 +3,7 @@ import Radium from 'radium';
 import Screenshots from '../helpers/screenshots';
 import ProjectLinks from '../helpers/project_links';
 
-export default class Panoractives extends Component {
+class Panoractives extends Component {
   
   render() {
     return (

@@ -3,7 +3,7 @@ import Radium from 'radium';
 import Screenshots from '../helpers/screenshots';
 import ProjectLinks from '../helpers/project_links';
 
-export default class MyRentWillBuy extends Component {
+class MyRentWillBuy extends Component {
   
   render() {
     return (
