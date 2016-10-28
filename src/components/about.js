@@ -4,7 +4,26 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 export default class AboutPage extends Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = { instagramPics: [] };
+  }
+  
+  getInstagramPics() {
+    axios.get(`https://api.instagram.com/v1/users/self/media/recent/?access_token=410514147.fa8199b.60218cf7197242f8a18387e437fd483c`)
+    .then(response => {
+      this.setState({ instagramPics: response.data });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+  
   render() {
+    
+    this.getInstagramPics();
+    
     return (
       <div className="content-wrapper">
         <h1>About</h1>
