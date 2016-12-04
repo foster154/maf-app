@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
-import styleVars from '../../../styles/variables';
+import styleVars from '../../styles/variables';
 
 
 export default class Screenshots extends Component {

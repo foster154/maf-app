@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import styleVars from '../../styles/variables';
-import styled from 'styled-components';
+require('../styles/_home.scss');
 
 export default class Home extends Component {
 
@@ -12,227 +11,53 @@ export default class Home extends Component {
         
           <h1>Hello World</h1>
           
-          <Section>
-            <ImgEye src="/img/eye.png" />
-            <SectionText>A few years ago, I was all set to begin optometry school. I'd spent years taking the necessary courses, exams, and interviews. I picked a school, enrolled in classes, and my wife and I were ready to move.</SectionText>
-          </Section>
+          <div className="home-content-section">
+            <img src="/img/eye.png" />
+            <div>A few years ago, I was all set to begin optometry school. I'd spent years taking the necessary courses, exams, and interviews. I picked a school, enrolled in classes, and my wife and I were ready to move.</div>
+          </div>
           
-          <Section>
-            <ImgCoding src="/img/coding.jpg" />
-            <SectionText>Instead, providence landed me on the support team of a small software company. I spent years worth of early mornings, late nights, and weekends learning how to code. Eventually I could build things of value, and transitioned to the development team. I love what I do.</SectionText>
-          </Section>
+          <div className="home-content-section">
+            <img className="round" src="/img/coding.jpg" />
+            <div>Instead, providence landed me on the support team of a small software company. I spent years worth of early mornings, late nights, and weekends learning how to code. Eventually I could build things of value, and transitioned to the development team. I love what I do.</div>
+          </div>
           
-          <Section>
-            <ImgReactLogo src="/img/react-logo.png" />
-            <SectionText>My focus these days is on crafting memorable JavaScript-based clientside experiences, particularly with React/Redux. I'm still early in the journey, and learning a ton. #juniordevforlife</SectionText>
-          </Section>
+          <div className="home-content-section">
+            <img src="/img/react-logo.png" />
+            <div>My focus these days is on crafting memorable JavaScript-based clientside experiences, particularly with React/Redux. I'm still early in the journey, and learning a ton. #juniordevforlife</div>
+          </div>
 
         </div>
       
-        <MountainSection>
+        <div className="home-mountain-section">
           
-          <TrailQuote>
+          <h2 className="quote">
             “The trail is the thing, not the end of the trail. Travel too fast and you miss all you are traveling for.”
-          </TrailQuote>
+          </h2>
         
-          <MtnLinkWrapperTL>
-            <MtnLinkLine />
-            <MtnLinkTL to="/projects">Projects</MtnLinkTL>
-          </MtnLinkWrapperTL>
+          <div className="mtn-link-wrapper mtn-link-wrapper-tl">
+            <div className="mtn-link-line"></div>
+            <Link className="mtn-link mtn-link-tl" to="/projects">Projects</Link>
+          </div>
           
-          <MtnLinkWrapperBL>
-            <MtnLinkLine />
-            <MtnLinkBL to="/learning">Learning</MtnLinkBL>
-          </MtnLinkWrapperBL>
+          <div className="mtn-link-wrapper mtn-link-wrapper-bl">
+            <div className="mtn-link-line"></div>
+            <Link className="mtn-link mtn-link-bl" to="/learning">Learning</Link>
+          </div>
         
-          <MtnLinkWrapperTR>
-            <MtnLinkLine />
-            <MtnLinkTR to="/posts">Posts</MtnLinkTR>
-          </MtnLinkWrapperTR>
+          <div className="mtn-link-wrapper mtn-link-wrapper-tr">
+            <div className="mtn-link-line"></div>
+            <Link className="mtn-link mtn-link-tr" to="/posts">Posts</Link>
+          </div>
           
-          <MtnLinkWrapperBR>
-            <MtnLinkLine />
-            <MtnLinkBR to="/about">About</MtnLinkBR>
-          </MtnLinkWrapperBR>
+          <div className="mtn-link-wrapper mtn-link-wrapper-br">
+            <div className="mtn-link-line"></div>
+            <Link className="mtn-link mtn-link-br" to="/about">About</Link>
+          </div>
           
-        </MountainSection>
+        </div>
         
       </div>
     );
   }
 }
 
-// Styles
-
-const Section = styled.div`
-  display: flex;
-  margin-bottom: 30px;
-  background-color: ${styleVars.colors.ltBlue};
-  padding: 20px;
-  border-radius: 5px;
-`;
-
-const SectionText = styled.div`
-  align-self: center;
-`;
-
-const ImgEye = styled.img`
-  align-self: center;
-  margin-right: 30px;
-  margin-left: -98px;
-  height: 156px;
-`;
-
-const ImgCoding = styled.img`
-  align-self: center;
-  margin-right: 30px;
-  height: 156px;
-  border-radius: 50%;
-  margin-left: -102px;
-`;
-
-const ImgReactLogo = styled.img`
-  align-self: center;
-  margin-right: 30px;
-  height: 166px;
-  margin-left: -102px;
-`;
-
-const MountainSection = styled.div`
-  margin-top: 100px;
-  background-image: url("img/path.jpg");
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  margin-bottom: 30px;
-`;
-
-const TrailQuote = styled.h2`
-  text-align: center;
-  color: white;
-  padding: 30px;
-  font-size: 24px;
-  @media (max-width: 640px) {
-    font-size: 20px;
-  }
-`;
-
-// Mtn Link Shared
-const MtnLinkWrapper = styled.div`
-  position: absolute;
-  color: white;
-  font-weight: 600;
-`;
-
-const MtnLinkLine = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background-color: ${styleVars.colors.red};
-  top: 50%;
-  z-index: 0;
-  border-radius: 15px;
-  @media (max-width: 640px) {
-    display: none;
-  }
-`;
-
-const MtnLink = styled(Link)`
-  color: white;
-  display: inline-block;
-  padding: 24px;
-  background-color: ${styleVars.colors.red};
-  font-size: 36px;
-  z-index: 10000;
-  border-radius: 4px;
-  
-  @media (max-width: 1000px) {
-    padding: 22px;
-    font-size: 28px;
-  }
-  
-  @media (max-width: 800px) {
-    padding: 18px;
-    font-size: 22px;
-  }
-  
-  @media (max-width: 640px) {
-    padding: 6px 18px;
-    font-size: 20px;
-    display: block;
-    background-color: rgba(0,0,0,.7);
-  }
-`;
-
-// Mtn Link: Top Left
-const MtnLinkWrapperTL = styled(MtnLinkWrapper)`
-  right: 50%;
-  bottom: 100px;
-  width: 20%;
-  text-align: left;
-  transform: skewY(15deg);
-  @media (max-width: 640px) {
-    right: 55%;
-    width: 40%;
-    text-align: center;
-  }
-`;
-
-const MtnLinkTL = styled(MtnLink)`
-  transform: skewY(-15deg);
-`;
-
-// Mtn Link: Top Right
-const MtnLinkWrapperTR = styled(MtnLinkWrapper)`
-  left: 50%;
-  bottom: 73px;
-  width: 20%;
-  text-align: right;
-  transform: skewY(-15deg);
-  @media (max-width: 640px) {
-    left: 55%;
-    width: 40%;
-    text-align: center;
-    bottom: 100px;
-  }
-`;
-
-const MtnLinkTR = styled(MtnLink)`
-  transform: skewY(15deg);
-`;
-
-// Mtn Link: Bottom Left
-const MtnLinkWrapperBL = styled(MtnLinkWrapper)`
-  right: 50%;
-  bottom: 34px;
-  width: 40%;
-  text-align: left;
-  transform: skewY(5deg);
-  @media (max-width: 640px) {
-    right: 58%;
-    text-align: center;
-  }
-`;
-
-const MtnLinkBL = styled(MtnLink)`
-  transform: skewY(-5deg);
-`;
-
-// Mtn Link: Bottom Right
-const MtnLinkWrapperBR = styled(MtnLinkWrapper)`
-  left: 50%;
-  bottom: 7px;
-  width: 40%;
-  text-align: right;
-  transform: skewY(-5deg);
-  @media (max-width: 640px) {
-    left: 58%;
-    text-align: center;
-    bottom: 34px;
-  }
-`;
-
-const MtnLinkBR = styled(MtnLink)`
-  transform: skewY(5deg);
-`;

@@ -4,7 +4,7 @@ import Radium from 'radium';
 var Link = require('react-router').Link;
 Link = Radium(Link);
 import { API_URL } from '../../../constants.js';
-import styleVars from '../../../styles/variables';
+import styleVars from '../../styles/variables';
 
 class PostList extends Component {
   

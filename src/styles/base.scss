@@ -1,3 +1,6 @@
+@import 'vendor/normalize.css';
+@import 'variables';
+
 * {
   font-family: 'Source Sans Pro', sans-serif;
   box-sizing: border-box;
@@ -23,7 +26,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: #FF3B3F;
+  color: $red;
 }
 
 .content-wrapper {
@@ -31,5 +34,7 @@ a {
   max-width: 90%;
   margin: 60px auto;
 }
+
+.round { border-radius: 50%;}
 
 .error {color:red}

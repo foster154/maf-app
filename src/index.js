@@ -11,13 +11,16 @@ import Learning from './components/learning';
 import PostList from './components/posts/post_list';
 import PostView from './components/posts/post_view';
 
-// projects
+// Projects
 import ShowAndTour from './components/projects/_show_and_tour';
 import SupportTracker from './components/projects/_support_tracker';
 import Panoractives from './components/projects/_panoractives';
 import MyRentWillBuy from './components/projects/_my_rent_will_buy';
 import BoiseStateYL from './components/projects/_boise_state_young_life';
 import BrooksideDentistry from './components/projects/_brookside_dentistry';
+
+// Styles
+require('./styles/base.scss');
 
 ReactDOM.render(
     <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>

@@ -1,0 +1,158 @@
+@import 'variables';
+
+.home-content-section {
+  display: flex;
+  margin-bottom: 30px;
+  background-color: $ltBlue;
+  padding: 20px;
+  border-radius: 5px;
+  
+  img {
+    align-self: center;
+    margin-right: 30px;
+    margin-left: -98px;
+    height: 156px;
+  }
+  
+  div {
+    align-self: center;
+  }
+}
+
+.home-mountain-section {
+  margin-top: 100px;
+  background-image: url("/img/path.jpg");
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 30px;
+  
+  .quote {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    font-size: 24px;
+    @media (max-width: 640px) {
+      font-size: 20px;
+    }
+  }
+  
+  .mtn-link-wrapper {
+    position: absolute;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .mtn-link-line {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: $red;
+    top: 50%;
+    z-index: 0;
+    border-radius: 15px;
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+  
+  .mtn-link {
+    color: white;
+    display: inline-block;
+    padding: 24px;
+    background-color: $red;
+    font-size: 36px;
+    z-index: 10000;
+    border-radius: 4px;
+
+    @media (max-width: 1000px) {
+      padding: 22px;
+      font-size: 28px;
+    }
+
+    @media (max-width: 800px) {
+      padding: 18px;
+      font-size: 22px;
+    }
+
+    @media (max-width: 640px) {
+      padding: 6px 18px;
+      font-size: 20px;
+      display: block;
+      background-color: rgba(0,0,0,.7);
+    }
+  }
+  
+  // Mtn Link: Top Left
+  .mtn-link-wrapper-tl {
+    right: 50%;
+    bottom: 100px;
+    width: 20%;
+    text-align: left;
+    transform: skewY(15deg);
+    @media (max-width: 640px) {
+      right: 55%;
+      width: 40%;
+      text-align: center;
+    }
+  }
+  
+  .mtn-link-tl {
+    transform: skewY(-15deg);
+  }
+  
+  // Mtn Link: Top Right
+  .mtn-link-wrapper-tr {
+    left: 50%;
+    bottom: 73px;
+    width: 20%;
+    text-align: right;
+    transform: skewY(-15deg);
+    @media (max-width: 640px) {
+      left: 55%;
+      width: 40%;
+      text-align: center;
+      bottom: 100px;
+    }
+  }
+
+  .mtn-link-tr {
+    transform: skewY(15deg);
+  }
+
+  // Mtn Link: Bottom Left
+  .mtn-link-wrapper-bl {
+    right: 50%;
+    bottom: 34px;
+    width: 40%;
+    text-align: left;
+    transform: skewY(5deg);
+    @media (max-width: 640px) {
+      right: 58%;
+      text-align: center;
+    }
+  }
+
+  .mtn-link-bl {
+    transform: skewY(-5deg);
+  }
+
+  // Mtn Link: Bottom Right
+  .mtn-link-wrapper-br {
+    left: 50%;
+    bottom: 7px;
+    width: 40%;
+    text-align: right;
+    transform: skewY(-5deg);
+    @media (max-width: 640px) {
+      left: 58%;
+      text-align: center;
+      bottom: 34px;
+    }
+  }
+
+  .mtn-link-br {
+    transform: skewY(5deg);
+  }
+}

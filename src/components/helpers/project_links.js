@@ -1,6 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
-import styleVars from '../../../styles/variables';
+import styleVars from '../../styles/variables';
 
 const ProjectLinks = (props) => {
   
